@@ -1,6 +1,6 @@
-
+setwd("~/GitHub/Opportunities")
 ##### Load and Setup Data Frame(s) #####
-oppdata <- read.csv("opportunitydata.csv", na.strings=c("","NULL"))  # Don't forget to add this argument for the NA's
+oppdata <- read.csv("~/GitHub/Opportunities/src/opportunitydata.csv", na.strings=c("","NULL"))  # Don't forget to add this argument for the NA's
 str(oppdata)
 
 library('rpart')
@@ -119,9 +119,9 @@ varImpPlot(rfTree)
 
 # Apply a Prediction column to Test and Train for this RF Tree
 rfPredict <- predict(rfTree, opptest)
-rfPredict <- predict(rfTree, opptrain)
+rfPredict2 <- predict(rfTree, opptrain)
 opptest$RFPrediction <- rfPredict
-opptrain$RFPrediction <- rfPredict
+opptrain$RFPrediction <- rfPredict2
 
 # Check confusion matrix, and build precision/recall vector 
 RFConfusion <- table(opptest$WonLost, opptest$RFPrediction)

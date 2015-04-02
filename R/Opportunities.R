@@ -13,7 +13,7 @@ library('party')
 library('ggplot2')
 library('lubridate')
 library('ROCR')
-library(dplyr)
+library('dplyr')
 
 # Set dates to 'Date' type(called "class" in R)
 oppdata$AvailabilityDate <- as.Date(oppdata$AvailabilityDate, format = "%m/%d/%Y")
